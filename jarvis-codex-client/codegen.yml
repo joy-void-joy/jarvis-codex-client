@@ -1,0 +1,9 @@
+// TODO: Create a python module of graphql-codegen
+
+schema: ${GRAPHQL_BACKEND:http://localhost:8000/graphql}
+documents:
+  - ./graphql/**/*.graphql
+generates:
+  ./graphql/generated/:
+    plugins:
+      - python

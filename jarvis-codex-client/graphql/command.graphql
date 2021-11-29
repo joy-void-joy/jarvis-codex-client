@@ -1,0 +1,27 @@
+# Write your query or mutation here
+mutation command($text:String)
+{
+  createCommand(command:$text)
+  {
+    direct
+    response
+  	{
+      ...on CodeResponse
+      {
+        code
+        {
+          answer
+        }
+        description
+        {
+          answer
+          anonymizedCode
+        }
+      }
+      ...on DirectResponse
+      {
+        answer
+      }
+  	}
+  }
+}
